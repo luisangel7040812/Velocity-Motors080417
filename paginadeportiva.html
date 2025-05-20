@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velocity Motors</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #969fdf;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #66a2ef;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+    }
+
+    .logotipodepagina {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(250, 250, 250, 0.15);
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      margin: 0 auto 25px;
+      max-width: 80%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logotipodepagina:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    nav {
+      background-color: #708090;
+      overflow: hidden;
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+    }
+
+    nav a:hover {
+      background-color: #3490dc;
+    }
+
+    .sidebar {
+      width: 100px;
+      background-color: #000000;
+      padding-top: 10px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 15%;
+      overflow-y: auto;
+    }
+
+    .sidebar a {
+      padding: 10px 15px;
+      text-decoration: none;
+      color: white;
+      display: block;
+    }
+
+    .sidebar a:hover {
+      background-color: #708090;
+    }
+
+    .main-content {
+      margin-left: 100px;
+      padding: 10px;
+      width: calc(50% - 100px);
+      margin-top: 10px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background-color: #d4f5fa;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product img {
+      width: 70%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .product h3 {
+      font-size: 1.5em;
+      color: #555;
+    }
+
+    .product p {
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .product button {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .product button:hover {
+      background-color: #28a745;
+      color: black;
+    }
+
+    footer {
+      background-color: #969fdf;
+      color: black;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="logotipodepagina">
+            <img src="carros/logotipodepagina.png" alt="Logo Velocity Motors"> <!-- Imagen del logo en tamaño considerable -->
+        </div>
+        <h1>Velocity Motors</h1>
+        <p>donde la velocidad se une con el lujo</p>
+    </header>
+
+     <!-- Menú de Navegación -->
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('inicio')">Inicio</a>
+        <a href="javascript:void(0);" onclick="showSection('catalogo')">Catálogo</a>
+        <a href="javascript:void(0);" onclick="showSection('ofertas')">Ofertas Especiales</a>
+        <a href="javascript:void(0);" onclick="showSection('miCuenta')">Mi Cuenta</a>
+    </nav>
+
+    <!-- Sección Inicio -->
+<div id="inicio" class="section">
+    <h2>¡Bienvenido a Velocity Motors!</h2>
+    <p>Nos complace tenerte con nosotros, un lugar donde la pasión por la velocidad y la elegancia se encuentran. En nuestra página web, te ofrecemos una exclusiva selección de carros deportivos de las marcas más prestigiosas del mundo, diseñados para los verdaderos amantes de la adrenalina y el lujo.</p>
+
+<p>Explora modelos de alto rendimiento, con tecnología de punta y un diseño imbatible. Ya sea que busques un automóvil que combine potencia con estilo o un vehículo con una ingeniería de precisión, aquí encontrarás lo mejor para satisfacer tus deseos y necesidades.</p>
+
+<p>Además, ofrecemos detalles completos sobre cada modelo, fotos impresionantes, comparativas, y una experiencia de compra única que te permitirá hacer realidad tu sueño de conducir lo más exclusivo del mercado.</p>
+
+<p>Únete a nuestra comunidad de conductores exigentes y disfruta de un sitio web donde la calidad, el diseño y el placer al conducir son nuestra prioridad. ¡Prepárate para experimentar una nueva forma de vivir la carretera aqui en Velocity Motors!</p>
+
+<h2>Permitenos contarte la historia de Velocity Motors</h2>
+
+<p>  En el corazón de una prestigiosa ciudad donde la pasión por los automóviles se sentía en cada esquina, nació Velocity Motors, una agencia que cambiaría la forma en que las personas compraban y vivían los autos de alto rendimiento.
+ Todo comenzó en 1998, cuando Luis Garcia, un joven ingeniero automotriz y entusiasta de los superdeportivos, sintió que el mercado carecía de una agencia que no solo vendiera autos exclusivos, sino que también ofreciera una experiencia inigualable para los amantes de la velocidad. 
+Luis, junto con su socio y mejor amigo Brayan Guadalupe, un experto en negocios y finanzas, decidió tomar un riesgo y fundar una agencia donde la excelencia y la pasión por los autos fueran la prioridad. </p>
+
+<p>Al inicio, Velocity Motors era un pequeño local en una zona comercial, con un inventario limitado y grandes sueños. Con mucho esfuerzo, lograron establecer alianzas con marcas como Ferrari, Lamborghini, McLaren y otras marcas mas. Sin embargo, convencer a los clientes de confiar en una agencia nueva no fue fácil. Luis y Brayan decidieron diferenciarse ofreciendo pruebas de manejo exclusivas, asesoría personalizada y eventos de exhibición de autos que atrajeron a los primeros compradores. Con el paso de los años, Velocity Motors ganó reputación como una de las agencias más prestigiosas en el mundo de los autos de lujo. Se expandieron a otras ciudades, abrieron sucursales en mercados internacionales y comenzaron a vender ediciones limitadas y modelos personalizados para clientes VIP. Su innovador enfoque de atención al cliente y su pasión por la industria hicieron que incluso los fabricantes de automóviles reconocieran a Velocity Motors como un referente.</p>
+
+<p>Hoy en día, Velocity Motors no solo vende automóviles, sino que también organiza eventos exclusivos, participa en ferias de autos de lujo y trabaja con fabricantes para diseñar versiones únicas de modelos icónicos. La agencia sigue evolucionando, explorando tecnologías como la electrificación y la inteligencia artificial para mejorar la experiencia de compra y personalización de los autos.
+
+Lo que comenzó como el sueño de dos apasionados de los autos se ha convertido en un imperio automotriz, demostrando que la velocidad, la innovación y la excelencia pueden ir de la mano. Velocity Motors no solo vende autos, sino que crea historias de pasión y velocidad para sus clientes.</p>
+
+  </div>
+
+
+        <!-- Sección Catálogo -->
+        <div id="catalogo" class="section hidden">
+            <h2>Catálogo de Vehículos</h2>
+            <div class="products">
+                <div class="product">
+                    <img src="carros/right.png" alt="Koenigsegg Jesko">
+                    <h3>Koenisegg Jesko</h3>
+                    <p>¡Siente la velocidad sin límites con el Koenigsegg Jesko! Un diseño imponente, tecnología avanzada y potencia descomunal, todo en una máquina que redefine la perfección sobre ruedas.</p>
+                    <p class="price">$300,000,000</p> 
+                    <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+                </div>
+
+                <div class="product">
+                    <img src="carros/pagani1.jfif" alt="Pagani Huayra BC">
+                    <h3>Pagani Huayra BC</h3>
+                    <p>El Pagani Huayra BC es una obra maestra de ingeniería y arte. Con su poder arrollador y detalles incomparables, cada kilómetro se convierte en una experiencia única.</p>
+                    <p class="price">$63,000,000</p>
+                    <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+                </div>
+
+                <div class="product">
+                    <img src="carros/Jaguar.jfif" alt="Jaguar F-Pace SVR">
+                    <h3>Jaguar F-Pace SVR</h3>
+                    <p>El Jaguar F-PACE SVR combina elegancia, potencia y rendimiento en su máxima expresión. Cada viaje se convierte en una experiencia de lujo y adrenalina.</p>
+                    <p class="price">$2,617,900</p>
+                    <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+                </div>
+
+                <div class="product">
+            <img src="carros/ferrarif40.jfif" alt="Producto 4">
+            <h3>Ferrari F40</h3>
+            <p>El Ferrari F40 es la esencia de la velocidad y la pureza. Un ícono de la ingeniería automovilística, donde cada curva y cada aceleración cuentan una historia de legado, pasión y rendimiento sin igual. Conduce la leyenda.</p>
+             <p class="price">$114,000,000</p>
+          
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+            </div>
+
+            <div class="product">
+            <img src="carros/centenario.jfif" alt="Producto 5">
+            <h3>Lamborghini Centenario</h3>
+            <p>El Lamborghini Centenario es una celebración de la innovación y el poder sin límites. Con un diseño futurista y un motor que ruge con fuerza, cada momento al volante es una obra maestra de velocidad y exclusividad. Siente el legado.</p>
+            <p class="price">$4,990,00</p>
+            
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+            </div>
+
+            <div class="product">
+            <img src="carros/apollon.jfif" alt="Producto 6">
+            <h3>Apollo N </h3>
+            <p>El Apollo N es la fusión perfecta entre rendimiento extremo y diseño audaz. Con un motor imparable y una estética vanguardista, cada viaje te lleva a nuevas fronteras de velocidad y emoción. Siente la potencia de la perfección.</p>
+             <p class="price">$54,000,000</p>
+            
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+            </div>
+
+            <div class="product">
+            <img src="carros/bolide.jfif" alt="Producto 7">
+            <h3>Bugatti Bolide</h3>
+            <p>El Bugatti Bolide redefine lo que significa ser una máquina de velocidad. Con una ingeniería de vanguardia y un diseño extremo, cada aceleración es una manifestación de poder puro. No solo es un coche, es una revolución sobre ruedas.</p>
+            <p class="price">$94,000,000</p>
+            
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/BUGATTI CHIRON.jfif" alt="Producto 8">
+            <h3>Bugatti Chiron</h3>
+            <p>El Bugatti Chiron es la fusión perfecta de lujo y poder sin igual. Con una velocidad vertiginosa y una ingeniería exquisita, cada instante al volante te transporta a un mundo de exclusividad y rendimiento extremo. Conquista la carretera, supera todos los límites.</p>
+            <p class="price">$200,000,000</p>
+
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+         <div class="product">
+            <img src="carros/devel.jfif" alt="Producto 9">
+            <h3>Devel Sixteen</h3>
+            <p>El Devel Sixteen es la esencia de la velocidad descomunal y la innovación sin fronteras. Con un motor de 5,000 caballos de fuerza y un diseño futurista, cada kilómetro recorrido es una experiencia épica de potencia y exclusividad. La revolución de los hypercars está aquí.</p>
+            <p class="price">$140,300,000</p>
+           
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/genty.jfif" alt="Producto 10">
+            <h3>Genty Akylone</h3>
+            <p>El Genty Akilone es la máxima expresión de lujo y rendimiento extremo. Con su imponente motor y diseño vanguardista, redefine el concepto de supercoche. Potencia, exclusividad y tecnología de vanguardia, todo en una máquina creada para los verdaderos amantes de la velocidad.</p>
+            <p class="price">$25,000,000</p>
+         
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/hennessey.jfif" alt="Producto 11">
+            <h3>Hennessey Venom F5</h3>
+            <p>El Hennessey Venom F5 no es solo un coche, es una bestia de velocidad. Con una potencia que desafía los límites y un diseño aerodinámico sin igual, cada aceleración te lleva más allá de lo posible. Experimenta la perfección en movimiento.</p>
+            <p class="price">$60,000,000</p>
+           
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+          <div class="product">
+            <img src="carros/absolut.jfif" alt="Producto 12">
+            <h3>Koenisegg Jesko Absolut</h3>
+            <p>El Koenigsegg Jesko Absolut es la culminación de la velocidad sin fronteras. Con una ingeniería de precisión y un motor que redefine la potencia, este hypercar no solo rompe récords, sino que los reescribe. La perfección tiene un nombre, y es Jesko Absolut.</p>
+            <p class="price">$320,000,000</p>
+           
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/ssc.jfif" alt="Producto 13">
+            <h3>SSC Tuatara</h3>
+            <p>El SSC Tuatara es la verdadera definición de velocidad extrema y precisión. Con un diseño aerodinámico y un motor que desafía los límites de la física, cada kilómetro es un desafío superado. El futuro del rendimiento automovilístico está aquí.</p>
+            <p class="price">$33,000,000</p>
+       
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/porsche.jfif" alt="Producto 14">
+            <h3>Porsche 918 Spyder</h3>
+            <p>El Porsche 918 Spyder es la unión perfecta entre potencia eléctrica y rendimiento extremo. Con una ingeniería innovadora y un diseño elegante, redefine la experiencia de conducir, llevando la tecnología híbrida al siguiente nivel.</p>
+            <p class="price">$285,000,000</p>
+            
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+         <div class="product">
+            <img src="carros/martin.jfif" alt="Producto 15">
+            <h3>Aston Martin Victor</h3>
+            <p>El Aston Martin Victor es la esencia de la elegancia y el rendimiento extremo. Con un diseño exclusivo y una potencia arrolladora, cada detalle ha sido meticulosamente diseñado para ofrecer una experiencia de conducción única. Vive la perfección, vive Aston Martin.</p>
+            <p class="price">$145,000,000</p>
+       
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+         <div class="product">
+            <img src="carros/peugeot.jfif" alt="Producto 16">
+            <h3>Peugeot Onyx</h3>
+            <p>El Peugeot Onyx es una obra maestra de diseño y tecnología. Con su estética futurista y materiales innovadores, cada línea refleja el alma de la modernidad. Un superdeportivo que no solo destaca por su apariencia, sino por su rendimiento incomparable.</p>
+            <p class="price">$155,000,000</p>
+        
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/glicken.jfif" alt="Producto 17">
+            <h3>Glicken House 003</h3>
+            <p>El Glickenhaus 003 es la fusión perfecta entre ingeniería de vanguardia y pasión por la velocidad. Con un diseño imponente y una potencia inigualable, cada curva se convierte en una obra de arte. Desafía los límites.</p>
+            <p class="price">$47,000,000</p>
+         
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+         <div class="product">
+            <img src="carros/laferrari.jfif" alt="Producto 18">
+            <h3>Ferrari Laferrari Aperta</h3>
+            <p>El Ferrari LaFerrari Aperta es la pura esencia del rendimiento y la exclusividad. Con un motor híbrido que desafía los límites de la velocidad y un diseño abierto que te conecta con la carretera, cada viaje es una experiencia única. Siente la perfección al aire libre.</p>
+            <p class="price">$80,000,000</p>
+          
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/countach.jfif" alt="Producto ">
+            <h3>Lamborghini Countach</h3>
+            <p>El Lamborghini Countach es un ícono que nunca pasa de moda. Con su diseño radical y un rendimiento sin igual, este superdeportivo sigue siendo la definición de audacia y lujo. Revive la leyenda, conduce el futuro del pasado.</p>
+            <p class="price">$30,000,000</p>
+       
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/corvette.jfif" alt="Producto 19">
+            <h3>Chevrolet Corvette Grand Sport</h3>
+            <p>El Chevrolet Corvette Grand Sport es la mezcla perfecta de potencia, precisión y estilo icónico. Con un diseño agresivo y un rendimiento inigualable, cada curva es una invitación a dominar la carretera. Vive la experiencia de conducción más pura y emocionante.</p>
+            <p class="price">$1,836,000</p>
+          
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/Mclaren.jpg" alt="Producto 20">
+            <h3>Mclaren P1</h3>
+            <p>El McLaren P1 es la perfecta unión de tecnología avanzada y rendimiento extremo. Con un motor híbrido que redefine la velocidad y un diseño aerodinámico imparable, cada kilómetro es un testimonio de innovación y exclusividad. El futuro de los superdeportivos ha llegado.</p>
+            <p class="price">$6,200,000</p>
+        
+           <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+       <div class="product">
+            <img src="carros/agera.jfif" alt="Producto 21">
+            <h3>Koenisegg Agera RS</h3>
+            <p> El Koenigsegg Agera RS es una obra maestra de la ingeniería, diseñada para romper récords y superar expectativas. Con su potencia descomunal y un diseño impecable, cada aceleración es una explosión de velocidad. La perfección en su forma más pura.</p>
+            <p class="price">$98,400,000</p>
+                      
+            <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/rimac.jfif" alt="Producto 22">
+            <h3>Rimac Nevera</h3>
+            <p>El Rimac Nevera redefine la velocidad eléctrica con un rendimiento sin igual y tecnología de vanguardia. Con un diseño futurista y una potencia imparable, cada aceleración te lleva más allá de los límites. El futuro del automovilismo ya está aquí, y es eléctrico.</p>
+            <p class="price">$65,000,000</p>
+                    
+                       <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/gt.jfif" alt="Producto 23">
+            <h3>Ford GT</h3>
+            <p>El Ford GT es la esencia de la ingeniería pura y la velocidad sin límites. Con su diseño aerodinámico y un motor de alto rendimiento, cada viaje te conecta con la historia del automovilismo, mientras desafías las expectativas de lo posible. Un verdadero ícono de potencia y precisión.</p>
+            <p class="price">$10,000,000</p>
+                      
+                        <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+         <div class="product">
+            <img src="carros/bailey.jfif" alt="Producto 24">
+            <h3>BXR Bailey Blade GT1</h3>
+            <p>El BXR Bailey Blade GT1 es un superdeportivo que lleva el rendimiento y el diseño a nuevas alturas. Con su aerodinámica imponente y un motor de potencia explosiva, cada curva y aceleración es una obra maestra de precisión. Siente la velocidad, vive la exclusividad.
+            </p>
+            <p class="price">$40,000,000</p>
+                       
+                        <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+        
+         <div class="product">
+            <img src="carros/mercedez.jfif" alt="Producto 25">
+            <h3>Mercedes-Benz AMG GT Black Series</h3>
+            <p>El Mercedes-Benz AMG GT Black Series es la máxima expresión de poder, precisión y exclusividad. Con su motor impresionante y un diseño agresivo, cada aceleración te acerca más al límite de la perfección. Dominio absoluto sobre la pista y la carretera.</p>
+            <p class="price">$30,000,000</p>
+               
+                        <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+         <div class="product">
+            <img src="carros/supra.jfif" alt="Producto 25">
+            <h3>Toyota Supra MK4</h3>
+            <p>El Toyota Supra MK4 es una leyenda que ha resistido la prueba del tiempo. Con su rendimiento imparable y diseño icónico, cada curva te conecta con una historia de velocidad, potencia y emoción pura. Conduce el mito, siente la pasión.</p>
+            <p class="price">$1,443,900</p>
+                      
+                        <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/ferrarifxxk.jpg" alt="Producto 25">
+            <h3>Ferrari FXXK evo</h3>
+            <p>El Ferrari FXX-K es un automóvil hiperdeportivo desarrollado por Ferrari como parte de su programa de autos de alto rendimiento para pista. Basado en el LaFerrari, el FXX-K es un modelo de edición limitada diseñado exclusivamente para uso en circuitos, sin homologación para carretera ni competición oficial.</p>
+            <p class="price">$3,000,000</p>
+                      
+                        <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/mclarensenna.jpg" alt="Producto 25">
+            <h3>McLaren Senna</h3>
+            <p>El McLaren Senna es un hiperdeportivo de edición limitada fabricado por McLaren en honor al legendario piloto de Fórmula 1 Ayrton Senna. Diseñado para ofrecer el máximo rendimiento en pista sin comprometer su capacidad de conducción en carretera, el Senna se distingue por su enfoque extremo en aerodinámica y ligereza.</p>
+            <p class="price">$27,328,139</p>
+                      
+                        <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+
+        <div class="product">
+            <img src="carros/temerario.webp" alt="Producto 25">
+            <h3>Lamborghini Temerario</h3>
+            <p>El Lamborghini Temerario es un superdeportivo híbrido que se presentó en 2024. Es el primer superdeportivo de la marca Lamborghini es el primer y gran sucesor del Huracán.El Temerario marca un hito en el diseño de Lamborghini, combinando un carácter inconfundible con líneas que rinden homenaje a los iconos de la marca Lamborghini. </p>
+            <p class="price">$150,000,000</p>
+                      
+                        <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+    </div>
+ </div>
+
+   <!-- Sección Ofertas Especiales -->
+        <div id="ofertas" class="section hidden">
+            <h2>Ofertas Especiales</h2>
+
+             <div class="product">
+            <img src="carros/temerario.webp" alt="Producto 25">
+            <h3>Lamborghini Temerario</h3>
+            <p>El Lamborghini Temerario es un superdeportivo híbrido que se presentó en 2024. Es el primer superdeportivo de la marca Lamborghini es el primer y gran sucesor del Huracán.El Temerario marca un hito en el diseño de Lamborghini, combinando un carácter inconfundible con líneas que rinden homenaje a los iconos de la marca Lamborghini. </p>
+            <p class="price">$100,000,000</p>
+                      
+                        <form action="/comprar" method="post">
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="product_name" value="Deportivo 1">
+                <input type="hidden" name="product_price" value="50000">
+                <button type="submit">Comprar</button>
+            </form>
+        </div>
+         <p>Nuevas ofertas proximamente...</p>
+    </div>
+</div>
+
+
+       <!-- Sección Mi Cuenta -->
+<div id="miCuenta" class="section hidden">
+    <h2>Mi Cuenta</h2>
+    <p>Bienvenido a tu espacio personal. Aquí podrás registrarte, iniciar sesión o ponerte en contacto con nosotros para cualquier consulta.</p>
+
+    <div class="form-container" id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form action="/login" method="post">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+        <!-- Opción de Registrarse -->
+        <div class="form-container" id="register-form">
+        <h2>Crear Cuenta</h2>
+        <p>Si aún no tienes cuenta, regístrate ahora para disfrutar de nuestras ofertas exclusivas.</p>
+        <form action="/register" method="post">
+            <label for="fullname">Nombre Completo</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email_register">Correo Electrónico</label>
+            <input type="email" id="email_register" name="email" required>
+
+            <label for="password_register">Contraseña</label>
+            <input type="password" id="password_register" name="password" required>
+
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <!-- Formularios de Iniciar Sesión, Registro y Contacto -->
+    <div class="form-container hidden" id="login-form">
+        <h2>Iniciar Sesión</h2>
+        <form action="/login" method="post">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <div class="form-container" id="contact-form">
+        <h2>Contáctanos</h2>
+        <form action="/contact" method="post">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email_contact">Correo Electrónico</label>
+            <input type="email" id="email_contact" name="email" required>
+
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="1" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+    <!-- Footer -->
+    
+
+    <script>
+        // Función para mostrar la sección seleccionada
+        function showSection(section) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(s => s.classList.add('hidden'));
+            
+            // Mostrar la sección seleccionada
+            const selectedSection = document.getElementById(section);
+            if (selectedSection) {
+                selectedSection.classList.remove('hidden');
+            }
+        }
+
+        // Mostrar la sección 'inicio' por defecto
+        window.onload = function() {
+            showSection('inicio');
+        };
+    </script>
+
+</body>
+</html>
